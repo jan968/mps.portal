@@ -1277,12 +1277,12 @@
 
         <template>
           <div id="app">
-            <vueSignature ref="signature" :sigOption="option" :w="'800px'" :h="'400px'"></vueSignature>
+            <vueSignature ref="signature" :sigOption="option" :w="'400px'" :h="'200px'" class="signature-box"></vueSignature>
             <vueSignature ref="signature1" :sigOption="option"></vueSignature>
-            <button @click="saveSig">Save</button>
-            <button @click="clear">Clear</button>
-            <button @click="undo">Undo</button>
-            <button @click="addWaterMark">addWaterMark</button>
+            <button class="sig-btn" @click="saveSig">Shrani</button>
+            <button class="sig-btn" @click="clear">Počisti</button>
+            <button class="sig-btn" @click="undo">Undo</button>
+            <button class="sig-btn" @click="addWaterMark">addWaterMark</button>
           </div>
         </template>
       </v-form>
@@ -1408,6 +1408,7 @@ export default {
     this.initialize();
   },
 
+/* Metode  ************************************************************/
   methods: {
     initialize() {
       this.troskovi = [];
@@ -1629,6 +1630,14 @@ hr {
 .checkbox-text {
   padding-bottom: 8px;
   font-size: 1.1em;
+}
+
+.signature-box {
+  border: 1px solid #666;
+}
+
+.sig-btn {
+  padding: 0 10px;
 }
 
 h1 {
