@@ -1279,7 +1279,7 @@
           <div id="app">
             <vueSignature ref="signature" :sigOption="option" :w="'400px'" :h="'200px'" class="signature-box"></vueSignature>
             <vueSignature ref="signature1" :sigOption="option"></vueSignature>
-            <button class="sig-btn" @click="saveSig">Shrani</button>
+            <button class="sig-btn first-sig-btn" @click="saveSig">Shrani</button>
             <button class="sig-btn" @click="clearSig">Počisti</button>
             <button class="sig-btn" @click="undoSig">Ukinuti</button>
             <button class="sig-btn" @click="addWaterMarkSig">Dodaj vodeni žig</button>
@@ -1633,6 +1633,10 @@ hr {
   border: 1px solid #666;
 }
 
+  canvas#canvas97 {
+    display: none;
+  }
+
 .sig-btn {
   padding: 0 10px;
   margin: 20px 0;
@@ -1811,6 +1815,7 @@ th.column.sortable.text-xs-left {
 /* responsive */
 
 @media only screen and (max-width: 320px) {
+
   .pagi {
     position: absolute;
     left: -7px;
@@ -1827,6 +1832,39 @@ th.column.sortable.text-xs-left {
 
   .theme--light.v-datatable .v-datatable__actions {
     margin-bottom: 40px;
+  }
+
+   .signature-box {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+   .sig-btn {
+    padding: 0 4px;
+    margin-bottom: 40px;
+  }
+
+}
+
+@media only screen and (min-width: 321px) and (max-width: 360px) { 
+    .sig-btn {
+      padding: 0 8px;
+    }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 415px) {
+    .first-sig-btn {
+      margin-left: 23px;
+    }
+ }
+
+@media screen and (min-width: 321px) and (max-width: 600px) { 
+
+ .signature-box {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
   }
 }
 
@@ -1872,6 +1910,7 @@ th.column.sortable.text-xs-left {
   h4.checkbox-text {
     font-weight: normal;
   }
+
 }
 
 @media only screen and (max-width: 1023px) {
