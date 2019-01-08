@@ -1280,9 +1280,9 @@
             <vueSignature ref="signature" :sigOption="option" :w="'400px'" :h="'200px'" class="signature-box"></vueSignature>
             <vueSignature ref="signature1" :sigOption="option"></vueSignature>
             <button class="sig-btn" @click="saveSig">Shrani</button>
-            <button class="sig-btn" @click="clear">Počisti</button>
-            <button class="sig-btn" @click="undo">Undo</button>
-            <button class="sig-btn" @click="addWaterMark">addWaterMark</button>
+            <button class="sig-btn" @click="clearSig">Počisti</button>
+            <button class="sig-btn" @click="undoSig">Ukinuti</button>
+            <button class="sig-btn" @click="addWaterMarkSig">Dodaj vodeni žig</button>
           </div>
         </template>
       </v-form>
@@ -1512,24 +1512,21 @@ export default {
 
     saveSig() {
       var _this = this;
-      var png = _this.$refs.signature.save();
-      var jpeg = _this.$refs.signature.save("image/jpeg");
-      var svg = _this.$refs.signature.save("image/svg+xml");
-      console.log(png);
-      console.log(jpeg);
-      console.log(svg);
+      var png = _this.$refs.signature.saveSig();
+      var jpeg = _this.$refs.signature.saveSig("image/jpeg");
+      var svg = _this.$refs.signature.saveSig("image/svg+xml");
     },
-    clear() {
+    clearSig() {
       var _this = this;
-      _this.$refs.signature.clear();
+      _this.$refs.signature.clearSig();
     },
-    undo() {
+    undoSig() {
       var _this = this;
-      _this.$refs.signature.undo();
+      _this.$refs.signature.undoSig();
     },
-    addWaterMark() {
+    addWaterMarkSig() {
       var _this = this;
-      _this.$refs.signature.addWaterMark({
+      _this.$refs.signature.addWaterMarkSig({
         text: "mark text", // watermark text, > default ''
         font: "20px Arial", // mark font, > default '20px sans-serif'
         style: "all", // fillText and strokeText,  'all'/'stroke'/'fill', > default 'fill
@@ -1541,7 +1538,7 @@ export default {
         sy: 200 // stroke positionY, > default 40
       });
     },
-    fromDataURL(url) {
+    fromDataURLSig(url) {
       var _this = this;
       _this.$refs.signature.fromDataURL("data:image/png;base64,iVBORw0K...");
     }
@@ -1638,6 +1635,7 @@ hr {
 
 .sig-btn {
   padding: 0 10px;
+  margin: 20px 0;
 }
 
 h1 {
@@ -1669,6 +1667,10 @@ h2 {
   width: 120px;
   white-space: pre;
   margin-bottom: 20px;
+}
+
+canvas#canvas86 {
+    display: none;
 }
 
 h4.checkbox-text {
