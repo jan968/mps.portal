@@ -1633,7 +1633,7 @@ hr {
   border: 1px solid #666;
 }
 
-  canvas#canvas97 {
+  canvas#canvas597 {
     display: none;
   }
 
@@ -1788,7 +1788,7 @@ table.v-table thead th:nth-child(2) {
 table.v-table thead th:nth-child(5),
 table.v-table thead th:nth-child(6),
 table.v-table thead th:nth-child(7) {
-  width: 99px !important;
+  width: 105px !important;
 }
 
 table.v-table thead td:not(:nth-child(1)),
@@ -1913,7 +1913,7 @@ th.column.sortable.text-xs-left {
 
 }
 
-@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: 1024px) {
   table.v-table thead th:nth-child(5),
   table.v-table thead th:nth-child(6),
   table.v-table thead th:nth-child(7) {
